@@ -19,26 +19,26 @@ After each exercise make sure to commit/push this way we can monitor your progre
 
 **NOTE**: You don't need to reset your `answers.js` file. Keep growing the file with each exercise, and make sure to add a comment so we know which exercise we are looking at.
 
-## Exercise
+## Only the pos
 Write a function called `printPositives` that takes an array and uses the `forEach` method to **print** only the positive numbers.
 
-## Exercise
+## Get positive
 Similar to the previous exercise, write a function called `getPositives` that takes an array and uses the `filter` method to **return a new array** with only the positive numbers.
 
-## Exercise
+## Filter it out
 Re-do exercise 1 by first filtering the input array, and then printing the numbers from the filtered array. Your code will look something like: `return arr.filter(...).forEach(...)`.
 
-## Exercise
-Write a function called `filterArray` that takes a callback function and an array as arguments. Your `filterArray` function should return a new array that contains only the elements where the callback function returns true.
+## Filter Array
+Write a function called `filterArray` that takes a callback function and an array as arguments. Your `filterArray` function should return a new array that contains only the elements where the callback function returns `true`.
 
 **NOTE**: This is a **trick question**. The answer is a one-liner and you are allowed to use `array.filter` :)
 
-## Exercise
+## The Longest Word
 Write a function called `longestWord` that takes a string as argument, and returns the longest word in the string. You should use `Array.prototype.reduce` to do your work.
 
 **Hint**: You can use `String.prototype.split` to split the string into an array of words.
 
-## Exercise
+## I'd like to buy a vowel
 Write a function called `countVowels` that takes a string and returns the number of vowels in the string. You should use `Array.prototype.reduce` to do your work.
 
 For the string `"The quick brown fox"`, the output should be `5` because there is one `e`, one `u`, one `i` and two `o`s.
@@ -47,14 +47,14 @@ For the string `"The quick brown fox"`, the output should be `5` because there i
 
 **Hint 2**: You can create an array of vowels and use `Array.prototype.indexOf` to check if the current letter is a vowel.
 
-## Exercise
+## High? Low?
 Write a function called `highLow` that takes an array of numbers, and returns an object with a property `highest` containing the highest number, and a property `lowest` containing the lowest number, using `Array.prototype.reduce`.
 
 For example, starting with `[1, -10, 20, 40, 5]`, your function should return `{highest: 40, lowest: -10}`.
 
 **Hint**: Javascript has a special value called `Infinity`, which is higher than any other number. See if you can initialize your reduce accumulator with `Infinity` and `-Infinity` :)
 
-## Exercise
+## Wheel of Fortune
 Write a function called `countChars` that takes a string, and returns an object where the keys are letters, and the value is the number of times that letter appears.
 
 For example, with input "hello world", the output should be:
@@ -73,7 +73,7 @@ For example, with input "hello world", the output should be:
 
 **NOTE**: Unlike arrays, objects don't have any ordering on them. When you print your object on the console, your keys may be displayed in a different order, and it does not matter.
 
-## Exercise
+## Functional Programming
 Let's take a break from calling array methods and think about a certain situation that occurs with the `filter` method. `Array.prototype.filter` will filter out elements where the callback function returns a falsy value. What if we wanted to do the opposite, and filter out elements which return a truthy value? Here's an example:
 
 ```javascript
@@ -155,7 +155,7 @@ var firstDoesNotDivideSecond = negate(firstDividesSecond);
 
 Here, since the original function takes two parameters, your `negate` should call it with two parameters. But for this challenge, you should make `negate` work for an arbitrary number of parameters. Hint: you can use the `arguments` keyword :)
 
-## Exercise
+## Find by ID
 Starting on week 3 of the bootcamp, we will be learning about databases. Databases are useful for saving data for long periods of time.
 
 Contrary to a JavaScript program, where all the data disappears when the program terminates, databases keep their data "forever".
@@ -222,7 +222,7 @@ Write a function called `peopleById` that takes an array of people and returns a
 
 You have effectively created what we call an *index*, not unlike the one you have in your phonebook.
 
-## Exercise
+## Find by First Name
 Expanding on the previous exercise, this time we are going to create an index on **first names**. Notice how in the previous exercise, each ID was unique. In this case, two people have the same first name.
 
 We want to create a function called `peopleByFirstName` that will take an array of people and return something that looks like this:
@@ -256,7 +256,7 @@ We want to create a function called `peopleByFirstName` that will take an array 
 
 You have effectively created an *index on first name*. This lets you find all people called, say, "John" without having to look through the whole results.
 
-## Exercise
+## High? Low? Part 2!
 Expanding on a previous exercise, write a function called `highLowTwo` that takes an array of numbers, and returns the higest, second highest, lowest, and second lowest numbers.
 
 For example, starting with `[1, -10, 20, 40, 5]`, your function should return:
@@ -271,5 +271,5 @@ For example, starting with `[1, -10, 20, 40, 5]`, your function should return:
 ```
 
 
-## Exercise
+## Functional Programming Part 2
 Start or continue the activity [Functional programming in JavaScript](http://reactivex.io/learnrx/).
