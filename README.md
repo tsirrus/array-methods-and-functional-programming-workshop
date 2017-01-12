@@ -140,6 +140,7 @@ var isNotEmpty = negate(empty);
 
 [1,2,3].filter(isEven) // [2]
 [1,2,3].filter(isOdd) // [1,3]
+```
 
 ### Challenge
 As a challenge, provide a more complete version of the `negate` function that will work with **any number of parameters**. For example, it should work with the following:
