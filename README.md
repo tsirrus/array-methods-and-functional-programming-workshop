@@ -1,4 +1,4 @@
-# DecodeMTL Array Methods Workshop
+# DecodeMTL Array Methods and Functional Programming Workshop
 
 ## Instructions
 
@@ -191,3 +191,50 @@ This time you won't be able to create a function that only takes one argument. T
 
   * [The JavaScript arguments object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments)
   * [`Function.prototype.apply`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
+
+### `compose1`
+Make this function return a **new function** that will take one argument and execute `fun2` with it. Then, take the return value of `fun2` and pass it to `fun1`. Finally return the return value of `fun1`. Here, an example would work best:
+
+```js
+function compose1(fun1, fun2) {
+    // Your code
+}
+
+function scream(str) {
+    return str.toUpperCase();
+}
+function shout(str) {
+    return str + '!!!';
+}
+
+var screamAndShout = compose1(shout, scream);
+
+screamAndShout('Hello World'); // HELLO WORLD!!!
+```
+
+### `compose2`
+This is the same thing as `compose1` but with an arbitrary number of functions in an array. Make this function return a **new function** that will take one argument. You will be passing this argument to the last function in `arrOfFuncs`. Take the return value and pass it to the previous function. Keep doing this all the way to the first function, and return the return value of the first function. Example:
+
+```js
+function compose2(arrOfFuncs) {
+    // Your code
+}
+
+// Takes a string, returns a string
+function toLowerCase(str) {
+    return str.toLowerCase();
+}
+// Takes a string, returns an array
+function splitByWord(str) {
+    return str.split(' ');
+}
+// Takes an array, returns a string
+function joinWithDashes(arrOfWords) {
+    return arrOfWords.join('-');
+}
+
+// Takes a string, returns a string by doing toLowerCase -> splitByWord -> joinWithDashes
+var createSlug = compose2([joinWithDashes, splitByWord, toLowerCase]);
+
+createSlug('The Quick Brown Fox'); // the-quick-brown-fox
+```

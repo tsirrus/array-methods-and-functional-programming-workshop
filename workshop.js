@@ -50,6 +50,14 @@ function negate2(predicate) {
 
 }
 
+function compose1(fun1, fun2) {
+
+}
+
+function compose2(arrOfFuncs) {
+
+}
+
 /***** DO NOT EDIT AFTER THIS LINE *****/
 module.exports = {
     forEach: forEach,
@@ -64,5 +72,7 @@ module.exports = {
     pluck: pluck,
     flatten: flatten,
     negate1: negate1,
-    negate2: negate2
+    negate2: negate2,
+    compose1: compose1,
+    compose2: compose2
 };
