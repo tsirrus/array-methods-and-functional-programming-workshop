@@ -1,5 +1,13 @@
 function forEach(callback, theArray) {
-
+  /*
+  This is a little hint to get you started ;)
+  
+  for (... theArray.length ...) {
+    ...
+    callback(...)
+    ...
+  }
+  */
 }
 
 function map(mappingFunction, theArray) {
