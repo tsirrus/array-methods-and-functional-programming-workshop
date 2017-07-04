@@ -8,18 +8,38 @@ function forEach(callback, theArray) {
     ...
   }
   */
+  for (var i in theArray) {
+    callback(theArray[i]);
+  }
 }
 
 function map(mappingFunction, theArray) {
-
+  var resultArray = [];
+  forEach(function(item){
+    resultArray.push(mappingFunction(item));
+  }, theArray)
+  return resultArray;
 }
 
 function filter(predicate, theArray) {
-
+  var resultArray = [];
+  forEach(function(item) {
+    if (predicate(item)){
+      resultArray.push(item);
+    }
+  }, theArray)
+  return resultArray;
 }
 
 function every(predicate, theArray) {
-
+  var resultBool = true;
+  for (var i in theArray) {
+    if (!predicate(theArray[i])){
+      resultBool=false;
+      break;
+    }
+  }
+  return resultBool;
 }
 
 function some(predicate, theArray) {
