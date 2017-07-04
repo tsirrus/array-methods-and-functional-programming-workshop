@@ -146,15 +146,31 @@ function negate1(predicate) {
 }
 
 function negate2(predicate) {
-
+  return function() {
+    return !predicate.apply(this,arguments);
+  }
 }
 
 function compose1(fun1, fun2) {
-
+  return function(item) {
+    return fun1(fun2(item));
+  }
 }
 
 function compose2(arrOfFuncs) {
-
+  function recurse(item, myArrayOfFuncs){
+    if (myArrayOfFuncs.length > 1){
+      var lastfunction = myArrayOfFuncs.pop();
+      return recurse(lastfunction(item),myArrayOfFuncs);
+    }
+    else {
+      return myArrayOfFuncs[0](item);
+    }
+  }
+  
+  return function(item){
+    return recurse(item,arrOfFuncs);
+  }
 }
 
 /***** DO NOT EDIT AFTER THIS LINE *****/
