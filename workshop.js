@@ -35,7 +35,7 @@ function every(predicate, theArray) {
   var resultBool = true;
   for (var i in theArray) {
     if (!predicate(theArray[i])){
-      resultBool=false;
+      resultBool = false;
       break;
     }
   }
@@ -43,23 +43,72 @@ function every(predicate, theArray) {
 }
 
 function some(predicate, theArray) {
-
+  var resultBool = false;
+  for (var i in theArray) {
+    if (predicate(theArray[i])){
+      resultBool = true;
+      break;
+    }
+  }
+  return resultBool;
 }
 
 function indexOf(item, theArray) {
-
+  var resultIndex = -1;
+  for (var i=0; i < theArray.length; i++) {
+    if (item === theArray[i]) {
+      resultIndex = i;
+      break;
+    }
+  }
+  return resultIndex;
 }
 
 function findIndex(predicate, theArray) {
-
+  var resultIndex = -1;
+    for (var i=0; i < theArray.length; i++) {
+    if (predicate(theArray[i])) {
+      resultIndex = i;
+      break;
+    }
+  }
+  return resultIndex;
+  // FindIndex can implement a predicate to test complex elements of an array (a nested array, an object, etc)
+  // Whereas indexOf will return false if we're comparing 2 equal elements that are not direct references of the same object
 }
 
 function first(n, theArray) {
-
+  if (theArray === undefined) {
+    if (n.length > 0) {
+      return n[0];
+    }
+    else {
+      return [];
+    }
+  }
+  else if (n > theArray.length) {
+    return theArray;
+  }
+  else {
+    return theArray.slice(0,n);
+  }
 }
 
 function last(n, theArray) {
-
+  if (theArray === undefined) {
+    if (n.length > 0) {
+      return n[n.length-1];
+    }
+    else {
+      return [];
+    }
+  }
+  else if (n > theArray.length) {
+    return theArray;
+  }
+  else {
+    return theArray.slice(theArray.length-n,theArray.length);
+  }
 }
 
 function pluck(property, arrayOfObjects) {
