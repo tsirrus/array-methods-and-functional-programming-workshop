@@ -140,7 +140,9 @@ function flatten(theArray) {
 }
 
 function negate1(predicate) {
-
+  return function(value) {
+    return !predicate(value);
+  }
 }
 
 function negate2(predicate) {
