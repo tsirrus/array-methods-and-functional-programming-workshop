@@ -112,11 +112,31 @@ function last(n, theArray) {
 }
 
 function pluck(property, arrayOfObjects) {
-
+  var resultArray = [];
+  for (var i in arrayOfObjects) {
+    resultArray.push(arrayOfObjects[i][property]);
+  }
+  return resultArray;
 }
 
 function flatten(theArray) {
-
+  var resultArray = [];
+  function addArrays(firstArray, secondArray) {
+    for (var i in secondArray) {
+      firstArray.push(secondArray[i]);
+    }
+  }
+  
+  for (var i in theArray) {
+    if (theArray[i].constructor === Array)
+    {
+       addArrays(resultArray,flatten(theArray[i]));
+    }
+    else {
+      resultArray.push(theArray[i]);
+    }
+  }
+  return resultArray;
 }
 
 function negate1(predicate) {
